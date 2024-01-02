@@ -448,21 +448,6 @@ Window:CreateButton('ads',false,function(val)
 		game:GetService('TweenService'):Create(workspace.CurrentCamera,TweenInfo.new(0.5),{FieldOfView = 70}):Play()
 	end    
 end)
-elseif game.PlaceId ==
-
-elseif game.PlaceId ==
-
-elseif game.PlaceId ==
-
-elseif game.PlaceId ==
-
-elseif game.PlaceId ==
-
-elseif game.PlaceId ==
-
-elseif game.PlaceId ==
-
-elseif game.PlaceId ==
 end)
 
 
