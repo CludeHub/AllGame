@@ -258,6 +258,21 @@ ExampleTab:CreateButton("Infinite Coins",function()
 print('press button')
 end)
 local ExampleTab = Window:CreateTab('Slap Battle','earth')
+ExampleTab:CreateLabel("Misc")
+ExampleTab:CreateToggle("Auto Remove Name",false,function(val)     
+        Auto_Remove = val
+            if val == true then
+                game.Players.LocalPlayer.Character:FindFirstChild("Head").Nametag.TextLabel:Destroy()
+                task.wait()
+                game.Players.LocalPlayer.CharacterAdded:Connect(function()
+                    if Auto_Remove == true then
+                        repeat task.wait() until game.Players.LocalPlayer.Character:FindFirstChild("Head")
+                        game.Players.LocalPlayer.Character:FindFirstChild("Head").Nametag.TextLabel:Destroy()
+                    end
+                end)
+        end
+	print('toggle',val)     
+end)
 
 ExampleTab:CreateToggle("Slapple Farm",false,function(val)   
         slappleFarm = val
@@ -322,6 +337,23 @@ ExampleTab:CreateButton("Get Tycoon",function()
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Arena.Plate.CFrame * CFrame.new(0,2,0)
         end
  print('press button')    
+end)
+ExampleTab:CreateLabel("Combat")
+ExampleTab:CreateToggle("Auto Enter Arena",false,function(val)    
+        autoJoin = val
+            if val == true then
+                while autoJoin do
+                    wait()
+                    repeat task.wait() until game.Players.LocalPlayer.Character
+                    if not game.Players.LocalPlayer.Character:FindFirstChild("entered") and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+                        repeat task.wait(.005)
+                            firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1.TouchInterest.Parent, 0)
+                            firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1.TouchInterest.Parent, 1)
+                        until game.Players.LocalPlayer.Character:FindFirstChild("entered")
+                    end
+                end
+        end
+	print('toggle',val)     
 end)
 
 ExampleTab:CreateToggle("infinite Reverse",false,function(val)    
@@ -422,7 +454,7 @@ ExampleTab:CreateToggle("Slap Aura",false,function(val)
         end
 	print('toggle',val)     
 end)
-
+ExampleTab:CreateLabel("Antis")
 ExampleTab:CreateToggle("Anti Ragdoll",false,function(val)     
         antiRagdoll = val
             if val == true then
@@ -581,23 +613,6 @@ ExampleTab:CreateToggle("Anti Stun",false,function(val)
 	print('toggle',val)     
 end)
 
-ExampleTab:CreateToggle("Auto Enter Arena",false,function(val)    
-        autoJoin = val
-            if val == true then
-                while autoJoin do
-                    wait()
-                    repeat task.wait() until game.Players.LocalPlayer.Character
-                    if not game.Players.LocalPlayer.Character:FindFirstChild("entered") and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
-                        repeat task.wait(.005)
-                            firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1.TouchInterest.Parent, 0)
-                            firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1.TouchInterest.Parent, 1)
-                        until game.Players.LocalPlayer.Character:FindFirstChild("entered")
-                    end
-                end
-        end
-	print('toggle',val)     
-end)
-
 ExampleTab:CreateToggle("Anti Cube of death",false,function(val)     
         if val == true then
             if game.Workspace:FindFirstChild("the cube of death(i heard it kills)", 1) then
@@ -607,21 +622,6 @@ ExampleTab:CreateToggle("Anti Cube of death",false,function(val)
             if game.Workspace:FindFirstChild("the cube of death(i heard it kills)", 1) then  
                 workspace.Arena.CubeOfDeathArea["the cube of death(i heard it kills)"].CanTouch = true
             end
-        end
-	print('toggle',val)     
-end)
-
-ExampleTab:CreateToggle("Auto Remove Name",false,function(val)     
-        Auto_Remove = val
-            if val == true then
-                game.Players.LocalPlayer.Character:FindFirstChild("Head").Nametag.TextLabel:Destroy()
-                task.wait()
-                game.Players.LocalPlayer.CharacterAdded:Connect(function()
-                    if Auto_Remove == true then
-                        repeat task.wait() until game.Players.LocalPlayer.Character:FindFirstChild("Head")
-                        game.Players.LocalPlayer.Character:FindFirstChild("Head").Nametag.TextLabel:Destroy()
-                    end
-                end)
         end
 	print('toggle',val)     
 end)
@@ -647,16 +647,7 @@ ExampleTab:CreateToggle("Anti Void",false,function(val)
 	print('toggle',val)     
 end)
 
-ExampleTab:CreateToggle("Spam Error Sound",false,function(val) 
-        errorSpam = val
-            if val == true then
-                while errorSpam do
-                    task.wait()
-                    game.ReplicatedStorage.ErrorDeath:FireServer()
-                end
-        end
-	print('toggle',val)     
-end)
+ExampleTab:CreateLabel("")
 
 ExampleTab:CreateToggle("Invisible Reverse",false,function(val)     
         Invis_Reverse = val
@@ -673,6 +664,8 @@ ExampleTab:CreateToggle("Invisible Reverse",false,function(val)
         end
 	print('toggle',val)     
 end)
+
+ExampleTab:CreateLabel("Sound")
 
 ExampleTab:CreateToggle("Spam Thanos sound",false,function(val)     
         autoThanos = val
@@ -702,6 +695,17 @@ ExampleTab:CreateToggle("Spam Space Sound",false,function(val)
                 for x = 1,5 do
                     task.wait()
                     game.Players.LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Landed)
+                end
+        end
+	print('toggle',val)     
+end)
+
+ExampleTab:CreateToggle("Spam Error Sound",false,function(val) 
+        errorSpam = val
+            if val == true then
+                while errorSpam do
+                    task.wait()
+                    game.ReplicatedStorage.ErrorDeath:FireServer()
                 end
         end
 	print('toggle',val)     
