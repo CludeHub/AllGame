@@ -257,28 +257,3 @@ end)
 ExampleTab:CreateButton("Infinite Coins",function()
 print('press button')
 end)
-local ExampleTab4 = Window:CreateTab('Player','list')
-ExampleTab4:CreateSlider("Set Speed",1,100,10,function(val)   
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = val
-	print('slider',val)     
-end)
-
-ExampleTab4:CreateSlider("Set Jump Power",1,100,10,function(val)     
-game.Players.LocalPlayer.Character.Humanoid.JumpPower = val
-	print('slider',val)     
-end)
-
-ExampleTab4:CreateSlider("Set Gravity",1,100,10,function(val)     
-if val == "" then   
-	val = "200"   
-	else  
-	game.Workspace.Gravity = val  
-	end 
-	print('slider',val)     
-end)
-
-
-
-
-
-
