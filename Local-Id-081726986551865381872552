@@ -2,6 +2,7 @@ local sex = loadstring(game:HttpGet('https://raw.githubusercontent.com/CludeHub/
 
 local Window = sex:Create('CludeHub','ScriptHub','Script')
 local ExampleTab = Window:CreateTab('Home','home')
+local ExampleTab4 = Window:CreateTab('Player','list')
 ExampleTab:CreateLabel("Script Made By Paul Paras")
 ExampleTab:CreateLabel("Many Script On my Channel")
 ExampleTab:CreateLabel("clude80")
@@ -208,24 +209,6 @@ end)
 ExampleTab:CreateKeybind("",Enum.KeyCode.E,function(val)
 	print('keybind',val)
 end)
-ExampleTab:CreateSlider("Set Speed",1,100,10,function(val)
-        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = val
-	print('slider',val)
-end)
-
-ExampleTab:CreateSlider("Set Jump Power",1,100,10,function(val)
-        game.Players.LocalPlayer.Character.Humanoid.JumpPower = val
-	print('slider',val)
-end)
-
-ExampleTab:CreateSlider("Set Gravity",1,100,10,function(val)
-        if val == "" then
-	val = "200"
-	else
-	game.Workspace.Gravity = val
-        end
-	print('slider',val)
-end)
 
 ExampleTab:CreateSlider("Parry Range",1,100,10,function(val)
 	print('slider',val)
@@ -274,24 +257,6 @@ end)
 
 ExampleTab:CreateButton("Infinite Coins",function()
 print('press button')
-end)
-ExampleTab:CreateSlider("Set Speed",1,100,10,function(val)
-        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = val
-print('slider',val)
-end)
-
-ExampleTab:CreateSlider("Set Jump Power",1,100,10,function(val)
-        game.Players.LocalPlayer.Character.Humanoid.JumpPower = val
-print('slider',val)
-end)
-
-ExampleTab:CreateSlider("Set Gravity",1,100,10,function(val)
-        if val == "" then
-	val = "200"
-	else
-	game.Workspace.Gravity = val
-        end
-print('slider',val)
 end)
 local ExampleTab = Window:CreateTab('Underground War','earth')
 
@@ -365,17 +330,17 @@ tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.Humanoid
  print('press button')    
 end)
 
-ExampleTab:CreateSlider("Set Speed",1,100,10,function(val)   
+ExampleTab4:CreateSlider("Set Speed",1,100,10,function(val)   
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = val
 	print('slider',val)     
 end)
 
-ExampleTab:CreateSlider("Set Jump Power",1,100,10,function(val)     
+ExampleTab4:CreateSlider("Set Jump Power",1,100,10,function(val)     
 game.Players.LocalPlayer.Character.Humanoid.JumpPower = val
 	print('slider',val)     
 end)
 
-ExampleTab:CreateSlider("Set Gravity",1,100,10,function(val)     
+ExampleTab4:CreateSlider("Set Gravity",1,100,10,function(val)     
 if val == "" then   
 	val = "200"   
 	else  
