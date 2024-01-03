@@ -230,3 +230,66 @@ end)
 ExampleTab:CreateSlider("Parry Range",1,100,10,function(val)
 	print('slider',val)
 end)
+local ExampleTab = Window:CreateTab('Zombie Attack','earth')
+
+ExampleTab:CreateButton("Auto Farm",function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/YellowGreg/RobloxScripts/main/Zombie-Attack/Auto-Farm.lua"))()
+print('press button')
+end)
+
+ExampleTab:CreateButton("Silent Aim",function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/YellowGreg/RobloxScripts/main/Zombie-Attack/Silent-Aim.lua"))()
+print('press button')
+end)
+
+ExampleTab:CreateButton("God Mode",function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/YellowGreg/RobloxScripts/main/Zombie-Attack/God-Mode.lua"))()
+print('press button')
+end)
+
+ExampleTab:CreateButton("Hit Box",function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/YellowGreg/RobloxScripts/main/Zombie-Attack/Extended-Hitbox.lua"))()
+print('press button')
+end)
+
+ExampleTab:CreateButton("Kill All In Platform",function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/YellowGreg/RobloxScripts/main/Zombie-Attack/Kill-In-Platform.lua"))()
+print('press button')
+end)
+ExampleTab:CreateToggle("Infinite Healt",false,function(val)
+print('toggle',val)
+end)
+
+ExampleTab:CreateToggle("Infinite Ammo",false,function(val)
+print('toggle',val)
+end)
+
+ExampleTab:CreateToggle("Infinite Jump",false,function(val)
+print('toggle',val)
+end)
+
+ExampleTab:CreateToggle("Infinite Effect",false,function(val)
+print('toggle',val)
+end)
+
+ExampleTab:CreateButton("Infinite Coins",function()
+print('press button')
+end)
+ExampleTab:CreateSlider("Set Speed",1,100,10,function(val)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = val
+print('slider',val)
+end)
+
+ExampleTab:CreateSlider("Set Jump Power",1,100,10,function(val)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = val
+print('slider',val)
+end)
+
+ExampleTab:CreateSlider("Set Gravity",1,100,10,function(val)
+        if val == "" then
+	val = "200"
+	else
+	game.Workspace.Gravity = val
+        end
+print('slider',val)
+end)
