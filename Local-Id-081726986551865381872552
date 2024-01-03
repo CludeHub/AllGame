@@ -11,7 +11,7 @@ ExampleTab:CreateButton("Agree and continue",function()
  print('press button')    
 end)
 
-local ExampleTab = Window:CreateTab('Blade Ball','list')
+local ExampleTab = Window:CreateTab('Blade Ball','locked')
 
 ExampleTab:CreateButton("Auto Parry OP",function()
         loadstring(game:HttpGet("https://pastebin.com/raw/yBawVcE7"))()
