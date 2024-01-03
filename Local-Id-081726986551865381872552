@@ -6,11 +6,20 @@ ExampleTab:CreateLabel("Script Made By Paul Paras")
 ExampleTab:CreateLabel("Many Script On my Channel")
 ExampleTab:CreateLabel("clude80")
 
-ExampleTab:CreateButton("Agree and continue",function()
-        print("Script Verified")
+ExampleTab:CreateButton("Subscribe Copy Link",function()
+        
  print('press button')    
 end)
 
+ExampleTab:CreateButton("Rejoin",function()	
+game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
+ print('press button')    
+end)
+
+ExampleTab:CreateButton("Infinite Yield",function()	
+loadstring(game:HttpGet('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Infinite%20Yield%20but%20with%20secure%20dex'))()
+ print('press button')    
+end)
 local ExampleTab = Window:CreateTab('Blade Ball','earth')
 
 ExampleTab:CreateButton("Auto Parry OP",function()
