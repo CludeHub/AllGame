@@ -1,6 +1,16 @@
 local sex = loadstring(game:HttpGet('https://raw.githubusercontent.com/CludeHub/CludeHub/main/CludeHub'))()
 
 local Window = sex:Create('CludeHub','ScriptHub','Script')
+local ExampleTab = Window:CreateTab('Home','earth')
+ExampleTab:CreateLabel("Script Made By Paul Paras")
+ExampleTab:CreateLabel("Many Script On my Channel")
+ExampleTab:CreateLabel("clude80")
+
+ExampleTab:CreateButton("Agree and continue",function()
+        print("Script Verified")
+ print('press button')    
+end)
+
 local ExampleTab = Window:CreateTab('Blade Ball','earth')
 
 ExampleTab:CreateButton("Auto Parry OP",function()
