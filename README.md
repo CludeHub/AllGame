@@ -1,1 +1,1 @@
-git add image.jpg
+![Alt Text](paste_image_url_here)
