@@ -1,1 +1,1 @@
-git commit -m "Add image.jpg"
+git add image.jpg
