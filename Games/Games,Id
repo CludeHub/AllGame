@@ -3191,3 +3191,157 @@ end
 if game.PlaceId == 15068118098 then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Ginxys/Super-Toilet-Brawl/main/Script.Lua"))()
 end
+if game.PlaceId == 189707 then
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/thanhdat4461/OrionMoblie/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Natural Disaster", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Main = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Player = Window:MakeTab({
+	Name = "Player",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Main:AddToggle({
+	Name = "Walk in Water",
+	Default = false,
+	Callback = function(Value)
+            if Value == false then do game.Workspace.WaterLevel.CanCollide = false
+				game.Workspace.WaterLevel.Size = Vector3.new(10, 1, 10)
+			end
+		end
+		if Value == true then do game.Workspace.WaterLevel.CanCollide = true
+				game.Workspace.WaterLevel.Size = Vector3.new(1000, 1, 1000)
+			end
+            end
+		print(Value)
+	end    
+})
+
+Main:AddToggle({
+	Name = "Select Map",
+	Default = false,
+	Callback = function(Value)
+            if Value == false then do game.Players.LocalPlayer.PlayerGui.MainGui.MapVotePage.Visible = false
+			end
+		end
+		if Value == true then do game.Players.LocalPlayer.PlayerGui.MainGui.MapVotePage.Visible = true
+			end
+            end
+		print(Value)
+	end    
+})
+
+Main:AddToggle({
+	Name = "Solid Iland",
+	Default = false,
+	Callback = function(Value)
+            for i, v in pairs (game.workspace:GetDescendants())do
+			if v.Name == 'LowerRocks' then -- change part to the name you want to look for
+				v.CanCollide = Value
+			end
+            end
+		print(Value)
+	end    
+})
+
+Main:AddButton({
+	Name = "No fall damage",
+	Callback = function()
+            game.Players.LocalPlayer.Character.FallDamageScript:Destroy()
+      		print("button pressed")
+  	end    
+})
+
+Main:AddButton({
+	Name = "Launch. Launch land",
+	Callback = function()
+            fireclickdetector(game:GetService("Workspace").Structure["Launch Land"]["SPACESHIP!!"].Shuttle.IgnitionButton.ClickDetector)
+fireclickdetector(game:GetService("Workspace").Structure["Launch Land"].RocketStand.ConsoleLower.ReleaseButtonLower.ClickDetector)
+fireclickdetector(game:GetService("Workspace").Structure["Launch Land"].RocketStand.ConsoleUpper.ReleaseButtonUpper.ClickDetector)
+fireclickdetector(game:GetService("Workspace").Structure["Launch Land"].LoadingTower.Console.ReleaseEntryBridge.ClickDetector)
+      		print("button pressed")
+  	end    
+})
+
+Main:AddToggle({
+	Name = "Auto Farm",
+	Default = false,
+	Callback = function(Value)
+            if Value then
+local runService = game:GetService("RunService")
+event = runService.RenderStepped:Connect(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-264, 195, 288)
+end)
+if game.Players.LocalPlayer.Character.FallDamageScript then
+game.Players.LocalPlayer.Character.FallDamageScript:Destroy()
+end
+end
+if not Value then
+event:Disconnect()
+            end
+		print(Value)
+	end    
+})
+
+Player:AddSlider({
+	Name = "Walkspeed",
+	Min = 20,
+	Max = 1000,
+	Default = 20,
+	Color = Color3.fromRGB(140, 185, 255),
+	Increment = 1,
+	ValueName = "WS",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+Walkspeed = Value
+	end    
+})
+
+Player:AddToggle({
+	Name = "Keep Walkspeed",
+	Default = false,
+	Callback = function(Value)
+KeepWalkspeed = Value
+            while KeepWalkspeed do
+                if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil and game.Players.LocalPlayer.Character.Humanoid.WalkSpeed ~= Walkspeed then
+                    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Walkspeed
+                end
+task.wait()
+            end
+	end    
+})
+
+Player:AddSlider({
+	Name = "Jumppower",
+	Min = 50,
+	Max = 1000,
+	Default = 50,
+	Color = Color3.fromRGB(255, 185, 140),
+	Increment = 1,
+	ValueName = "JP",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+Jumppower = Value
+	end    
+})
+
+Player:AddToggle({
+	Name = "Keep Jumppower",
+	Default = false,
+	Callback = function(Value)
+KeepJumppower = Value
+            while KeepJumppower do
+                if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil and game.Players.LocalPlayer.Character.Humanoid.WalkSpeed ~= Jumppower then
+                    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Jumppower
+                end
+task.wait()
+            end
+	end    
+})
+end
