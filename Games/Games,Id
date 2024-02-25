@@ -3345,3 +3345,68 @@ task.wait()
 	end    
 })
 end
+if game.PlaceId == 5777099015 then
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+local PhantomForcesWindow1 = Library:NewWindow("Main")
+local PhantomForcesWindow2 = Library:NewWindow("Player")
+
+local KillingCheats1 = PhantomForcesWindow1:NewSection("Main")
+local KillingCheats2 = PhantomForcesWindow2:NewSection("Player")
+
+KillingCheats1:CreateButton("Get All Badge", function()
+        local args = {
+    [1] = 2124910071
+}
+
+game:GetService("ReplicatedStorage").Events.GiveBadge:FireServer(unpack(args))
+
+local args = {
+    [1] = 2124910945
+}
+
+game:GetService("ReplicatedStorage").Events.GiveBadge:FireServer(unpack(args))
+
+local args = {
+    [1] = 2124940134
+}
+
+game:GetService("ReplicatedStorage").Events.GiveBadge:FireServer(unpack(args))
+
+local args = {
+    [1] = 2124940136
+}
+
+game:GetService("ReplicatedStorage").Events.GiveBadge:FireServer(unpack(args))
+        
+         print("HI")
+     end)
+
+KillingCheats1:CreateButton("Get all Cheese", function()
+        game:GetService("ReplicatedStorage").AddCheese:FireServer()
+wait(0.1)
+game:GetService("ReplicatedStorage").AddCheese:FireServer()
+wait(0.1)
+game:GetService("ReplicatedStorage").AddCheese:FireServer()
+wait(0.1)
+game:GetService("ReplicatedStorage").AddCheese:FireServer()
+wait(0.1)
+game:GetService("ReplicatedStorage").AddCheese:FireServer()
+wait(0.1)
+game:GetService("ReplicatedStorage").AddCheese:FireServer()
+wait(0.1)
+game:GetService("ReplicatedStorage").AddCheese:FireServer()
+wait(0.1)
+game:GetService("ReplicatedStorage").AddCheese:FireServer()
+         print("HI")
+     end)
+
+KillingCheats2:CreateTextbox("Set speed", function(text)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = text
+         print(text)
+     end)
+
+KillingCheats2:CreateTextbox("Set Jump Power", function(text)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = text
+         print(text)
+    end)
+end
